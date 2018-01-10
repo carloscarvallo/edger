@@ -1,6 +1,6 @@
 # Edger
 
-A file watcher/sync to work locally on the Apigee Edge platform
+A file watcher/sync to work locally on the Apigee Edge platform.
 
 ## Description
 
@@ -22,13 +22,13 @@ npm install -g
 
 ## Usage
 
-**Edger** has two differents approachs:
+**Edger** has two different approaches:
 - Download an **existing API Proxy** and start watching it locally for changes.
-- Start watching immediately in an **API Proxy local folder**, has to be in the root folder of the extracted bundle `/apiproxy`
+- Start watching immediately in an **API Proxy local folder**: it has to be in the root folder of the extracted bundle `/apiproxy`
 
 **Edger** will try to detect your _API Proxy base configuration_ (Proxy Properties) and merge then with variables settled in your environment.
 
-In that case `API_NAME` and `API_REVISION` can be ommited but is **mandatory** when `--download-bundle` option is configured.
+In that case `API_NAME` and `API_REVISION` can be omitted but is **mandatory** when `--download-bundle` option is configured.
 
 The variables are:
 
@@ -46,7 +46,7 @@ To use it then you do (remember to export environment vars):
 source .env
 ```
 
-### Parameters with others behaviors are listed below:
+### Parameters with other behaviors are listed below:
 
 `-D, --download-bundle` (optional) download the bundle and then start to watch it, if you don't specify it, it would attempt to watch the current directory and if a local **API Proxy local folder** is not present it will do nothing.
 
@@ -84,18 +84,18 @@ Download an API Proxy revision and start watching it :
 edger --download-bundle
 ```
 
-## Apigee API Edge Managment scopes
-When you make changes to the Endpoint Main Proxy file/files _for example regularly call_ `default.xml` on the `/proxies` folder _Apigee Edge Management API_ does not support a granular update for this file, it have to update the complete package, this operation requires some time and task, mainly related to the Apigee Edge Management API. These tasks are compress the folder, prepare, perform the verification against Apigee API and then update the Proxy remotely, it takes some time according to the size of the Project, the same behavior is applied to the file/files of Target Endpoint.
+## Apigee API Edge Management scopes
+When you make changes to the Endpoint Main Proxy file/files _for example regularly call_ `default.xml` on the `/proxies` folder _Apigee Edge Management API_ does not support a granular update for this file, it has to update the complete package, this operation requires some time and tasks, mainly related to the Apigee Edge Management API. These tasks are compressing the folder, preparing, performing the verification against Apigee API and then updating the Proxy remotely. It'd take some time according to the size of the Project. The same behavior is applied to the file/files of Target Endpoint.
  
 ## ToDo:
 - Support for automatic updates on Target Endpoint files
 - Support for a `json` configuration file
 - Support for basic configuration variables on the Edger commander
 - Support for CI with Gitlab and Github
-- Emits a exception when the API Proxy folder is not present
+- Generate an exception when the API Proxy folder is not present
 - Watch type of events based on chokidar
 - Watch event treatment
 - Invalid Apigee credentials treatment
-- Error treatments from Request (authentication errors, invalid file type) and from response (statusCode, cb error, etc)
+- Error treatment from Request (authentication errors, invalid file type) and from Response (statusCode, cb error, etc)
  
  Tested with Nodejs 8.6.0, 8.7.0

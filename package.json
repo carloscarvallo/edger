@@ -10,6 +10,7 @@
   "license": "ISC",
   "repository": "https://github.com/ivanflorentin/edger",
   "dependencies": {
+    "adm-zip": "^0.4.7",
     "archiver": "^2.1.0",
     "chokidar": "^1.7.0",
     "colors": "^1.1.2",
